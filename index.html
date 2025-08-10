@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Application</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="style.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <div class="w-full min-h-full bg-[linear-gradient(160deg,#112d4e_0%,#3f72af_100%)]">
+        <h1 class="text-white text-center text-2xl tracking-wide">WEATHER APP</h1>
+        <!-- NavBar -->
+        <div class="tab-container flex flex-row justify-between items-center max-w-[550px] w-[90%] mx-auto mt-8">
+            <p class="tab current-tab px-[8px] py-[5px] rounded-lg capitalize text-sm text-white" data-userWeather>Your Weather</p>
+            <p class="tab px-[8px] py-[5px] rounded-lg capitalize text-sm text-white" data-userSearch>Search Weather</p>
+        </div>
+
+        <!-- Weather Content section -->
+        <div class="weatherContainer">
+
+            <!-- Grant Location container -->
+            <div class="grantAcesses-Container">
+                <img src="./Assets/location.png" alt="" width="80" height="80" loading="lazy">
+                <h2>Grant Loacation Acesses</h2>
+                <p>Allow access to get weather information</p>
+                <button data-grantAcesses>Grant Access</button>
+            </div>
+
+            <!-- Search Form -->
+            <form data-SearchForm class="form-container">
+                <input placeholder="Search for city..." data-searchInput>
+                <button class="" type="submit">
+                    <img src="./Assets/search.png" alt="" width="20" height="20">
+                </button>
+            </form>
+
+            <!-- Loading screen -->
+            <div class="loading-container">
+                <img src="./Assets/loading.gif" alt="" width="150" height="150">
+                <p>Loading</p>
+            </div>
+
+
+            <!-- Location Bar -->
+            <div class="user-info-container">
+                <div class="name">
+                    <p data-cityName></p>
+                    <img data-countryIcon>
+                </div>
+
+                <p data-weatherDesc></p>
+
+                <img data-WeatherIcon>
+
+                <!-- Temperature -->
+                <div data-temp>
+
+                </div>
+
+                <!-- Weather conditon (humidity , wind speed , clouds)-->
+                <div class="flex flex-row justify-center items-center space-x-8">
+                    <div class="bg-[#dbe2ef]/50 border rounded-lg w-[200px] px-5 py-2">
+                        <img src="./Assets/wind.png" alt="" class="">
+                        <p class="text-white text-xl">Windspeed</p>
+                        <p data-windspeed class="text-white text-xl"></p>
+                    </div>
+
+                    <div class="bg-[#dbe2ef]/50 border rounded-lg w-[200px] px-5 py-2">
+                        <img src="./Assets/humidity.png" alt="">
+                        <p class="text-white text-xl">Humidity</p>
+                        <p data-humidity class="text-white text-xl"></p>
+                    </div>
+
+                    <div class="bg-[#dbe2ef]/50 border rounded-lg w-[200px] px-5 py-2">
+                        <img src="./Assets/cloud.png" alt="">
+                        <p class="text-white text-xl">Clouds</p>
+                        <p data-cloudiness class="text-white text-xl"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
