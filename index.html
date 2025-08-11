@@ -14,29 +14,34 @@
     />
 </head>
 <body>
-    <div class="w-full min-h-full bg-[linear-gradient(160deg,#112d4e_0%,#3f72af_100%)]">
-        <h1 class="text-white text-center text-2xl tracking-wide">WEATHER APP</h1>
+    <div class="w-screen h-screen bg-[linear-gradient(160deg,#112d4e_0%,#3f72af_100%)]">
+        <h1 class="text-white text-center text-2xl tracking-wide p-[20px]">WEATHER APP</h1>
         <!-- NavBar -->
-        <div class="tab-container flex flex-row justify-between items-center max-w-[550px] w-[90%] mx-auto mt-8">
-            <p class="tab current-tab px-[8px] py-[5px] rounded-lg capitalize text-sm text-white" data-userWeather>Your Weather</p>
-            <p class="tab px-[8px] py-[5px] rounded-lg capitalize text-sm text-white" data-userSearch>Search Weather</p>
+        <div class="tab-container flex flex-row justify-between items-center max-w-[550px] w-[90%] mx-auto mt-16">
+            <p class="tab current-tab px-[8px] py-[5px] rounded-lg capitalize text-sm text-white cursor-pointer" data-userWeather>Your Weather</p>
+            <p class="tab px-[8px] py-[5px] rounded-lg capitalize text-sm text-white cursor-pointer" data-userSearch>Search Weather</p>
         </div>
 
         <!-- Weather Content section -->
-        <div class="weatherContainer">
+        <div class="weatherContainer [margin-block:1rem] flex flex-col justify-center items-center">
 
             <!-- Grant Location container -->
-            <div class="grantAcesses-Container">
+            <div class="grantAcesses-Container flex flex-col justify-center items-center space-y-5">
                 <img src="./Assets/location.png" alt="" width="80" height="80" loading="lazy">
-                <h2>Grant Loacation Acesses</h2>
-                <p>Allow access to get weather information</p>
-                <button data-grantAcesses>Grant Access</button>
+                <h2 class="text-white text-3xl font-bold">Grant Loacation Acesses</h2>
+                <p class=" text-[#3f72af] font-semibold">Allow access to get weather information</p>
+                <button data-grantAcesses class="text-white px-4 py-2  rounded-md text-sm uppercase
+                    bg-[#3f72af]">
+                    Grant Access
+                </button>
             </div>
 
             <!-- Search Form -->
-            <form data-SearchForm class="form-container">
-                <input placeholder="Search for city..." data-searchInput>
-                <button class="" type="submit">
+            <form data-SearchForm class="form-container flex flex-row justify-center items-center max-w-[550px]
+                w-[90%] mx-auto gap-x-3 mb-12">
+                <input placeholder="Search for city..." data-searchInput class="placeholder:text-white/80
+                    rounded-lg w-[calc(100%-80px)] px-4 py-1 bg-[#DBE2EF]/50 focus:outline focus:outline-[3px] focus:outline-[rgba(255,255,255,0.7)]">
+                <button class="bg-[#3f72af] rounded-full p-2" type="submit">
                     <img src="./Assets/search.png" alt="" width="20" height="20">
                 </button>
             </form>
@@ -44,43 +49,45 @@
             <!-- Loading screen -->
             <div class="loading-container">
                 <img src="./Assets/loading.gif" alt="" width="150" height="150">
-                <p>Loading</p>
+                <p class="text-white text-center">Loading</p>
             </div>
 
 
             <!-- Location Bar -->
             <div class="user-info-container">
-                <div class="name">
-                    <p data-cityName></p>
-                    <img data-countryIcon>
+                <div class="name flex flex-row justify-center items-center mb-8 gap-2">
+                    <p data-cityName class="text-4xl text-white"></p>
+                    <img data-countryIcon width="30px" height="30px">
                 </div>
 
-                <p data-weatherDesc></p>
+                <div class="flex flex-col justify-center items-center mt-2 mb-4">
+                    <p data-weatherDesc class="text-white text-2xl capitalize"></p>
 
-                <img data-WeatherIcon>
+                    <img data-WeatherIcon width="90px" height="90px">
 
-                <!-- Temperature -->
-                <div data-temp>
+                    <!-- Temperature -->
+                    <div data-temp class="text-4xl text-white font-bold">
 
+                    </div>
                 </div>
 
                 <!-- Weather conditon (humidity , wind speed , clouds)-->
-                <div class="flex flex-row justify-center items-center space-x-8">
-                    <div class="bg-[#dbe2ef]/50 border rounded-lg w-[200px] px-5 py-2">
-                        <img src="./Assets/wind.png" alt="" class="">
-                        <p class="text-white text-xl">Windspeed</p>
+                <div class="flex flex-row justify-center items-center space-x-8 user-info mt-10">
+                    <div class="bg-[#dbe2ef]/50 border rounded-lg w-[200px] px-5 py-6 cursor-pointer">
+                        <img src="./Assets/wind.png" alt="" class="" width="50" height="50">
+                        <p class="text-white text-xl uppercase">Windspeed</p>
                         <p data-windspeed class="text-white text-xl"></p>
                     </div>
 
-                    <div class="bg-[#dbe2ef]/50 border rounded-lg w-[200px] px-5 py-2">
-                        <img src="./Assets/humidity.png" alt="">
-                        <p class="text-white text-xl">Humidity</p>
+                    <div class="bg-[#dbe2ef]/50 border rounded-lg w-[200px] px-5 py-6 cursor-pointer">
+                        <img src="./Assets/humidity.png" alt="" width="50" height="50">
+                        <p class="text-white text-xl uppercase">Humidity</p>
                         <p data-humidity class="text-white text-xl"></p>
                     </div>
 
-                    <div class="bg-[#dbe2ef]/50 border rounded-lg w-[200px] px-5 py-2">
-                        <img src="./Assets/cloud.png" alt="">
-                        <p class="text-white text-xl">Clouds</p>
+                    <div class="bg-[#dbe2ef]/50 border rounded-lg w-[200px] px-5 py-6 cursor-pointer">
+                        <img src="./Assets/cloud.png" alt="" width="50" height="50">
+                        <p class="text-white text-xl uppercase">Clouds</p>
                         <p data-cloudiness class="text-white text-xl"></p>
                     </div>
                 </div>

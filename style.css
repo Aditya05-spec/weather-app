@@ -12,6 +12,34 @@
     border-radius: 4px;
 }
 
+.grantAcesses-Container {
+    display: none;
+}
+
+.grantAcesses-Container.active {
+    display: flex;
+}
+
+.loading-container {
+    display: none;
+}
+
+.loading-container.active {
+    display: block;
+}
+
+.user-info-container {
+    display: none;
+}
+
+.user-info-container.active {
+    display: block;
+}
+
+.form-container {
+    display: none;
+}
+
 .form-container.active {
-    opacity: 1;
+    display: flex;
 }
